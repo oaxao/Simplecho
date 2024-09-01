@@ -57,6 +57,16 @@ function themeConfig($form) {
 	);
 	$form->addInput($consolePanelBan);
 
+	// 为每篇文章顶部添加版权声明
+	$themeCopyright = new Typecho_Widget_Helper_Form_Element_Radio('themeCopyright',
+		array(
+			'enable' => _t('启用'),
+			'disable' => _t('禁用'),
+		),
+		'disable', _t('版权声明'), _t('默认禁止，为每篇文章顶部添加简单的版权声明，版权协议为 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" alt="BY-NC-SA" title="BY-NC-SA" target="_blank">BY-NC-SA</a>')
+	);
+	$form->addInput($themeCopyright);
+
 	// 百度收录自动推送
 	$baiduPush = new Typecho_Widget_Helper_Form_Element_Radio('baiduPush',
 		array(
